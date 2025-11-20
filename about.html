@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device=device-width, initial-scale=1.0" />
   <title>About ｜ ReLAND 再地計畫</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -10,18 +10,23 @@
   <header class="site-header">
     <div class="logo">ReLAND</div>
     <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link active">About</a>
-      <a href="tickets.html" class="nav-link">Tickets</a>
-      <a href="guide.html" class="nav-link">Guide</a>
-      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
+      <a href="about.html" class="nav-link active" data-i18n="navAbout">About</a>
+      <a href="tickets.html" class="nav-link" data-i18n="navTickets">Tickets</a>
+      <a href="guide.html" class="nav-link" data-i18n="navGuide">Guide</a>
+      <a href="shop.html" class="nav-link" data-i18n="navShop">Shop</a>
+      <a href="team.html" class="nav-link" data-i18n="navTeam">Team</a>
     </nav>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="zh">中</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
   </header>
 
   <main class="page-wrap">
     <section class="section">
-      <h1 class="page-title fade-in-up">關於 ReLAND 再地計畫</h1>
-      <p class="page-intro fade-in-up">
+      <h1 class="page-title fade-in-up" data-i18n="aboutTitle">關於 ReLAND 再地計畫</h1>
+      <p class="page-intro fade-in-up" data-i18n="aboutIntro">
         ReLAND 以「重新降落在土地上」為意象，結合青年導覽、地方故事與數位工具，
         讓長治不再只是被路過的鄉鎮，而是值得專程前來、細細停留的地方。
       </p>
@@ -63,6 +68,39 @@
       </div>
     </section>
 
+    <!-- VTuber / 虛擬導覽員區塊 -->
+    <section class="section vtuber-section">
+      <h2 class="section-title fade-in-up">虛擬導覽員 · ReLAND 導覽夥伴</h2>
+      <p class="section-subtitle fade-in-up">
+        除了實際帶路的青年導覽員，我們也設計了專屬的虛擬導覽角色，<br />
+        在影片、短影音與線上導覽中陪伴大家一起認識長治。
+      </p>
+
+      <div class="vtuber-wrap">
+        <div class="vtuber-illust fade-in-up"></div>
+
+        <div class="vtuber-bio fade-in-up">
+          <h3 class="vtuber-name">田田 Tien-Tien</h3>
+          <p class="vtuber-role">ReLAND 虛擬導覽員 · 土地觀察員</p>
+          <p class="vtuber-text">
+            田田是 ReLAND 的虛擬導覽夥伴，設定為「降落在長治的土地觀察員」。<br />
+            透過短影音、線上導覽頁面與互動任務，引導旅客注意到田埂、老店、巷弄裡的日常故事。
+          </p>
+          <p class="vtuber-text">
+            未來也將結合導覽票券、NFC 勳章與線上紀錄頁面，成為 ReLAND 的「數位門面」：
+            不只出現在螢幕上，而是帶著大家把腳步真正踩進長治。
+          </p>
+
+          <div class="vtuber-tags">
+            <span class="tag-chip">#虛擬導覽員</span>
+            <span class="tag-chip">#Youth × Land</span>
+            <span class="tag-chip">#ReLAND夥伴</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 下載企劃書 / 簡報 -->
     <section class="section section-cta fade-in-up">
       <h2>想更深入了解計畫內容？</h2>
       <div class="btn-group">

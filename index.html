@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device=device-width, initial-scale=1.0" />
   <title>ReLAND 再地計畫｜長治青年創生平台</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -11,25 +11,36 @@
   <header class="site-header">
     <div class="logo">ReLAND</div>
     <nav class="nav">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="tickets.html" class="nav-link">Tickets</a>
-      <a href="guide.html" class="nav-link">Guide</a>
-      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="index.html" class="nav-link active" data-i18n="navHome">Home</a>
+      <a href="about.html" class="nav-link" data-i18n="navAbout">About</a>
+      <a href="tickets.html" class="nav-link" data-i18n="navTickets">Tickets</a>
+      <a href="guide.html" class="nav-link" data-i18n="navGuide">Guide</a>
+      <a href="shop.html" class="nav-link" data-i18n="navShop">Shop</a>
+      <a href="team.html" class="nav-link" data-i18n="navTeam">Team</a>
     </nav>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="zh">中</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
   </header>
 
   <!-- Hero 區 -->
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">長治，再被看見。</h1>
-      <p class="hero-subtitle">
+      <h1 class="hero-title fade-in-up" data-i18n="heroTitle">
+        長治，再被看見。
+      </h1>
+        <p class="hero-subtitle fade-in-up" data-i18n="heroSubtitle">
         ReLAND 再地計畫，以青年導覽 × 數位科技 × 地方品牌化為核心，<br />
         把導覽變成一種可以被購買、被收藏，也能創造地方改變的旅程。
       </p>
       <div class="hero-actions">
-        <a href="tickets.html" class="btn primary floating-btn hero-cta">預約導覽體驗</a>
-        <a href="about.html" class="btn ghost">了解計畫理念</a>
+        <a href="tickets.html" class="btn primary floating-btn hero-cta" data-i18n="heroCtaPrimary">
+          預約導覽體驗
+        </a>
+        <a href="about.html" class="btn ghost" data-i18n="heroCtaSecondary">
+          了解計畫理念
+        </a>
       </div>
     </div>
     <div class="hero-image-wrap">
@@ -63,7 +74,36 @@
     </div>
   </section>
 
-  <!-- Call to action 下拉 -->
+  <!-- 影音區：YouTube Shorts + Suno BGM -->
+  <section class="section media-section">
+    <h2 class="section-title fade-in-up" data-i18n="mediaTitle">導覽紀錄與影音</h2>
+    <div class="media-grid">
+      <div class="media-item fade-in-up">
+        <h3>ReLAND 導覽精華（YouTube Shorts）</h3>
+        <div class="video-embed">
+          <!-- 把你的 Shorts ID 換進去 -->
+          <iframe
+            src="https://www.youtube.com/embed/XXXXXXXXXXX"
+            title="ReLAND Shorts Highlight"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div class="media-item fade-in-up">
+        <h3>Suno BGM Demo</h3>
+        <p>這裡可以放你用 Suno 製作的主題 BGM，作為專案背景音樂展示。</p>
+        <audio controls>
+          <source src="assets/audio/reland-bgm.mp3" type="audio/mpeg" />
+          你的瀏覽器不支援 audio 播放。
+        </audio>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
   <section class="section section-cta fade-in-up">
     <h2>從一趟導覽，開始一段與土地的關係</h2>
     <p>無論你是旅客、學生、老師，或是想為地方做點什麼的青年，都可以在這裡找到自己的位置。</p>

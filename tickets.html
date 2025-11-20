@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device=device-width, initial-scale=1.0" />
   <title>Tickets ｜ ReLAND 導覽票券</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -10,12 +10,17 @@
   <header class="site-header">
     <div class="logo">ReLAND</div>
     <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="tickets.html" class="nav-link active">Tickets</a>
-      <a href="guide.html" class="nav-link">Guide</a>
-      <a href="shop.html" class="nav-link">Shop</a>
+      <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
+      <a href="about.html" class="nav-link" data-i18n="navAbout">About</a>
+      <a href="tickets.html" class="nav-link active" data-i18n="navTickets">Tickets</a>
+      <a href="guide.html" class="nav-link" data-i18n="navGuide">Guide</a>
+      <a href="shop.html" class="nav-link" data-i18n="navShop">Shop</a>
+      <a href="team.html" class="nav-link" data-i18n="navTeam">Team</a>
     </nav>
+    <div class="lang-switch">
+      <button class="lang-btn active" data-lang="zh">中</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
   </header>
 
   <main class="page-wrap">
@@ -34,7 +39,7 @@
             <li>農村生活導覽＋小型闖關任務</li>
             <li>附在地點心一份與紀念小卡</li>
           </ul>
-          <a href="#" class="btn primary small floating-btn">填寫預約表單</a>
+          <a href="#booking-form" class="btn primary small floating-btn">填寫預約表單</a>
         </article>
 
         <article class="card ticket-card fade-in-up">
@@ -45,7 +50,7 @@
             <li>文化路線導覽＋隱藏拍照點推薦</li>
             <li>NFC 智慧導覽卡與數位勳章</li>
           </ul>
-          <a href="#" class="btn primary small floating-btn">線上報名</a>
+          <a href="#booking-form" class="btn primary small floating-btn">線上報名</a>
         </article>
 
         <article class="card ticket-card fade-in-up">
@@ -56,8 +61,29 @@
             <li>可搭配地方課程與講座</li>
             <li>提供教師版導覽講義與學習單</li>
           </ul>
-          <a href="#" class="btn ghost small">預約洽談</a>
+          <a href="#booking-form" class="btn ghost small">預約洽談</a>
         </article>
+      </div>
+    </section>
+
+    <!-- Google 表單嵌入 -->
+    <section class="section" id="booking-form">
+      <h2 class="section-title fade-in-up">線上報名表單</h2>
+      <p class="fade-in-up">
+        若想體驗 ReLAND 導覽，請直接填寫下方表單，我們會透過 Email 或 LINE 與您確認。
+      </p>
+      <div class="form-embed fade-in-up">
+        <!-- 這裡換成你自己的 Google 表單 embed 連結 -->
+        <iframe
+          src="https://docs.google.com/forms/d/e/你的表單ID/viewform?embedded=true"
+          width="100%"
+          height="720"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+        >
+          載入表單中…
+        </iframe>
       </div>
     </section>
   </main>
