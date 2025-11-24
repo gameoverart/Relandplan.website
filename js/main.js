@@ -1,199 +1,102 @@
-// 簡易 i18n 字典
-const I18N = {
-  zh: {
-    navHome: "首頁",
-    navAbout: "關於計畫",
-    navTickets: "票券方案",
-    navGuide: "導覽路線",
-    navShop: "選物市集",
-    navTeam: "團隊介紹",
+// 漢堡選單開關
+const navToggle = document.getElementById("navToggle");
+const mainNav = document.getElementById("mainNav");
 
-    heroTitle: "長治，再被看見。",
-    heroSubtitle:
-      "ReLAND 再地計畫，以青年導覽 × 數位科技 × 地方品牌化為核心，<br />把導覽變成一種可以被購買、被收藏，也能創造地方改變的旅程。",
-    heroCtaPrimary: "預約導覽體驗",
-    heroCtaSecondary: "了解計畫理念",
-
-    mediaTitle: "導覽紀錄與影音",
-
-    aboutTitle: "關於 ReLAND 再地計畫",
-    aboutIntro:
-      "ReLAND 以「重新降落在土地上」為意象，結合青年導覽、地方故事與數位工具，讓長治不再只是被路過的鄉鎮，而是值得專程前來、細細停留的地方。",
-
-    teamTitle: "ReLAND 團隊介紹",
-    teamIntro:
-      "ReLAND 是由一群關心土地、熱愛設計與文化的青年所組成。我們相信，導覽不只是帶路，而是把地方的故事重新整理、說給更多人聽。",
-    teamVtuberTitle: "虛擬導覽員 · 團隊成員之一",
-    teamVtuberIntro:
-      "除了線下導覽夥伴，虛擬導覽員田田也會在線上內容與未來互動系統中，作為 ReLAND 的另一個「說故事的出口」。",
-  },
-
-  en: {
-    navHome: "Home",
-    navAbout: "About",
-    navTickets: "Tickets",
-    navGuide: "Guide",
-    navShop: "Shop",
-    navTeam: "Team",
-
-    heroTitle: "Changzhi, seen again.",
-    heroSubtitle:
-      "ReLAND is a youth-led local project that blends guided tours, digital tools, and local branding,<br />turning every journey into a story you can keep and share.",
-    heroCtaPrimary: "Book a Tour",
-    heroCtaSecondary: "Learn More",
-
-    mediaTitle: "Tour Highlights & Media",
-
-    aboutTitle: "About ReLAND",
-    aboutIntro:
-      "ReLAND stands for “re-landing” on the land. By combining youth-led tours, local storytelling, and digital tools, we invite people to pause, stay, and truly experience Changzhi.",
-
-    teamTitle: "ReLAND Team",
-    teamIntro:
-      "ReLAND is formed by young people who care about land, design, and culture. We believe guiding is not just leading the way, but retelling local stories in a way people can connect with.",
-    teamVtuberTitle: "Virtual Guide · Part of the Team",
-    teamVtuberIntro:
-      "Beyond on-site guides, our virtual guide Tien-Tien appears in online content and future interactive systems, becoming another storytelling channel for ReLAND.",
-  },
-};
-
-function applyLang(lang) {
-  const dict = I18N[lang];
-  if (!dict) return;
-
-  document.documentElement.setAttribute(
-    "lang",
-    lang === "zh" ? "zh-Hant" : "en"
-  );
-
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n");
-    if (!dict[key]) return;
-    const value = dict[key];
-
-    if (value.includes("<br")) {
-      el.innerHTML = value;
-    } else {
-      el.textContent = value;
-    }
+if (navToggle && mainNav) {
+  navToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+    navToggle.classList.toggle("active");
   });
 
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.getAttribute("data-lang") === lang);
+  // 點連結後自動收合（手機）
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      navToggle.classList.remove("active");
+    });
   });
-
-  localStorage.setItem("reland-lang", lang);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  // 語系初始化
-  const savedLang = localStorage.getItem("reland-lang") || "zh";
-  applyLang(savedLang);
+// 子選單開關（主要給手機用）
+const navSubParents = document.querySelectorAll(".nav-item.has-sub .nav-parent");
+
+navSubParents.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const item = btn.closest(".nav-item");
+    const isOpen = item.classList.contains("open");
+
+    // 一次只開一個
+    document.querySelectorAll(".nav-item.has-sub.open").forEach((i) => {
+      i.classList.remove("open");
+    });
+
+    if (!isOpen) {
+      item.classList.add("open");
+    }
+  });
+});
+
+// footer 年份
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  yearSpan.textContent = new Date().getFullYear();
+}
+
+// 語言切換：中 / EN / 日
+const langSwitch = document.getElementById("langSwitch");
+const bodyEl = document.body;
+
+function applyLang(lang) {
+  if (lang === "en") {
+    bodyEl.classList.remove("lang-zh", "lang-ja");
+    bodyEl.classList.add("lang-en");
+  } else if (lang === "ja") {
+    bodyEl.classList.remove("lang-zh", "lang-en");
+    bodyEl.classList.add("lang-ja");
+  } else {
+    bodyEl.classList.remove("lang-en", "lang-ja");
+    bodyEl.classList.add("lang-zh");
+  }
 
   document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.lang === lang);
+  });
+
+  try {
+    localStorage.setItem("serein-lang", lang);
+  } catch (e) {
+    // ignore
+  }
+}
+
+// 初始語言
+let initialLang = "zh";
+try {
+  const saved = localStorage.getItem("serein-lang");
+  if (saved === "en" || saved === "zh" || saved === "ja") {
+    initialLang = saved;
+  }
+} catch (e) {}
+applyLang(initialLang);
+
+if (langSwitch) {
+  langSwitch.querySelectorAll(".lang-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      const lang = btn.getAttribute("data-lang");
+      const lang = btn.dataset.lang;
       applyLang(lang);
     });
   });
+}
+// Team page：成員經歷顯示更多 / 收起
+const memberToggles = document.querySelectorAll(".member-toggle");
 
-  // GSAP Hero 進場
-  if (typeof gsap !== "undefined") {
-    const heroTitle = document.querySelector(".hero-title");
-    const heroSubtitle = document.querySelector(".hero-subtitle");
-    const heroCta = document.querySelector(".hero-cta");
-
-    if (heroTitle) {
-      gsap.from(heroTitle, {
-        y: 40,
-        opacity: 0,
-        duration: 0.9,
-        ease: "power2.out",
-      });
-    }
-
-    if (heroSubtitle) {
-      gsap.from(heroSubtitle, {
-        y: 20,
-        opacity: 0,
-        delay: 0.15,
-        duration: 0.9,
-        ease: "power2.out",
-      });
-    }
-
-    if (heroCta) {
-      gsap.from(heroCta, {
-        y: 20,
-        opacity: 0,
-        delay: 0.3,
-        duration: 0.9,
-        ease: "power2.out",
-      });
-    }
-  }
-
-  // IntersectionObserver + GSAP：滑動淡入
-  const fadeElems = document.querySelectorAll(".fade-in-up");
-  if (typeof IntersectionObserver !== "undefined" && typeof gsap !== "undefined") {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            gsap.to(entry.target, {
-              y: 0,
-              opacity: 1,
-              duration: 0.7,
-              ease: "power2.out",
-            });
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.12,
-      }
-    );
-
-    fadeElems.forEach((el) => observer.observe(el));
-  } else {
-    fadeElems.forEach((el) => {
-      el.style.opacity = 1;
-      el.style.transform = "translateY(0)";
-    });
-  }
-
-  // 浮動按鈕效果
-  if (typeof gsap !== "undefined") {
-    const floatButtons = document.querySelectorAll(".floating-btn");
-    floatButtons.forEach((btn, i) => {
-      gsap.to(btn, {
-        y: -6,
-        duration: 1.4,
-        ease: "power1.inOut",
-        repeat: -1,
-        yoyo: true,
-        delay: i * 0.2,
-      });
-    });
-  }
-
-  // === 漢堡選單 ===
-  const hamburger = document.querySelector(".hamburger");
-  const mobileMenu = document.querySelector(".mobile-menu");
-
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("open");
-      mobileMenu.classList.toggle("open");
-    });
-
-    // 點 mobile menu 裡面的連結就關閉選單
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("open");
-        mobileMenu.classList.remove("open");
-      });
-    });
-  }
+memberToggles.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const card = btn.closest(".team-card");
+    if (!card) return;
+    card.classList.toggle("expanded");
+  });
 });

@@ -1,146 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ReLAND 再地計畫｜長治青年創生平台</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serein Studio 瑟然工作室｜首頁</title>
+  <meta name="description" content="Serein Studio 瑟然工作室｜靜謐中的靈感流動。文化轉譯、設計、影像與創意企劃。">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
-<body>
-  <!-- 導覽列（含漢堡） -->
+<body class="lang-zh">
+
+  <!-- 頂部導覽列（所有頁面都一樣） -->
   <header class="site-header">
-    <div class="logo">ReLAND</div>
-
-    <!-- 桌機版導覽列 -->
-    <nav class="nav">
-      <a href="index.html" class="nav-link active" data-i18n="navHome">Home</a>
-      <a href="about.html" class="nav-link" data-i18n="navAbout">About</a>
-      <a href="tickets.html" class="nav-link" data-i18n="navTickets">Tickets</a>
-      <a href="guide.html" class="nav-link" data-i18n="navGuide">Guide</a>
-      <a href="shop.html" class="nav-link" data-i18n="navShop">Shop</a>
-      <a href="team.html" class="nav-link" data-i18n="navTeam">Team</a>
-    </nav>
-
-    <div class="right-tools">
-      <!-- 語系切換 -->
-      <div class="lang-switch">
-        <button class="lang-btn active" data-lang="zh">中</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-
-      <!-- 漢堡按鈕（手機用） -->
-      <button class="hamburger" aria-label="開啟選單">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-
-    <!-- 手機版全螢幕選單（不影響首頁排版） -->
-    <div class="mobile-menu">
-      <nav class="mobile-nav">
-        <a href="index.html" data-i18n="navHome">Home</a>
-        <a href="about.html" data-i18n="navAbout">About</a>
-        <a href="tickets.html" data-i18n="navTickets">Tickets</a>
-        <a href="guide.html" data-i18n="navGuide">Guide</a>
-        <a href="shop.html" data-i18n="navShop">Shop</a>
-        <a href="team.html" data-i18n="navTeam">Team</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero 區 -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title fade-in-up" data-i18n="heroTitle">
-        長治，再被看見。
-      </h1>
-      <p class="hero-subtitle fade-in-up" data-i18n="heroSubtitle">
-        ReLAND 再地計畫，以青年導覽 × 數位科技 × 地方品牌化為核心，<br />
-        把導覽變成一種可以被購買、被收藏，也能創造地方改變的旅程。
-      </p>
-      <div class="hero-actions">
-        <a href="tickets.html" class="btn primary floating-btn hero-cta" data-i18n="heroCtaPrimary">
-          預約導覽體驗
-        </a>
-        <a href="about.html" class="btn ghost" data-i18n="heroCtaSecondary">
-          了解計畫理念
-        </a>
-      </div>
-    </div>
-    <div class="hero-image-wrap">
-      <div class="hero-image"></div>
-      <div class="hero-tag fade-in-up">Changzhi · Youth · Land</div>
-    </div>
-  </section>
-
-  <!-- 三大亮點 -->
-  <section class="section section-grid">
-    <div class="section-title-wrap">
-      <h2 class="section-title fade-in-up">為什麼是 ReLAND？</h2>
-      <p class="section-subtitle fade-in-up">
-        我們不只是辦活動，而是設計一套能長期運作的地方創業系統。
-      </p>
-    </div>
-
-    <div class="card-grid">
-      <article class="card fade-in-up">
-        <h3>青年導覽 × 創業舞台</h3>
-        <p>透過導覽學堂與實際場域，讓青年以導覽作為進入地方創業的第一步。</p>
-      </article>
-      <article class="card fade-in-up">
-        <h3>智慧導覽 × 數位科技</h3>
-        <p>結合 NFC、LINE OA、短影音行銷，讓旅程在結束後還能繼續被記錄與分享。</p>
-      </article>
-      <article class="card fade-in-up">
-        <h3>品牌市集 × 地方聯盟</h3>
-        <p>ReLAND 選物市集串聯農產與文創，建立地方品牌間的長期合作關係。</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- 影音區 -->
-  <section class="section media-section">
-    <h2 class="section-title fade-in-up" data-i18n="mediaTitle">導覽紀錄與影音</h2>
-    <div class="media-grid">
-      <div class="media-item fade-in-up">
-        <h3>ReLAND 導覽精華（YouTube Shorts）</h3>
-        <div class="video-embed">
-          <!-- 把你的 Shorts ID 換進去 -->
-          <iframe
-            src="https://www.youtube.com/embed/XXXXXXXXXXX"
-            title="ReLAND Shorts Highlight"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="logo-mark">S</span>
+        <div class="logo-text">
+          <span class="logo-en">Serein Studio</span>
+          <span class="logo-zh">瑟然工作室</span>
         </div>
       </div>
 
-      <div class="media-item fade-in-up">
-        <h3>Suno BGM Demo</h3>
-        <p>這裡可以放你用 Suno 製作的主題 BGM，作為專案背景音樂展示。</p>
-        <audio controls>
-          <source src="assets/audio/reland-bgm.mp3" type="audio/mpeg" />
-          你的瀏覽器不支援 audio 播放。
-        </audio>
+      <!-- 主選單：分組＋子選單 -->
+      <nav class="main-nav" id="mainNav">
+        <!-- 首頁 -->
+        <a href="index.html" class="nav-link">
+          <span class="t-zh">首頁</span>
+          <span class="t-en">Home</span>
+          <span class="t-ja">ホーム</span>
+        </a>
+
+        <!-- 關於工作室：關於瑟然 / 成員 / 合作夥伴 -->
+        <div class="nav-item has-sub">
+          <button type="button" class="nav-parent">
+            <span class="t-zh">關於工作室</span>
+            <span class="t-en">About Studio</span>
+            <span class="t-ja">スタジオについて</span>
+            <span class="nav-caret">▾</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="about.html" class="nav-sub-link">
+              <span class="t-zh">關於瑟然</span>
+              <span class="t-en">About Serein</span>
+              <span class="t-ja">瑟然について</span>
+            </a>
+            <a href="team.html" class="nav-sub-link">
+              <span class="t-zh">工作室成員</span>
+              <span class="t-en">Team</span>
+              <span class="t-ja">メンバー</span>
+            </a>
+            <a href="partners.html" class="nav-sub-link">
+              <span class="t-zh">合作夥伴</span>
+              <span class="t-en">Partners</span>
+              <span class="t-ja">パートナー</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 服務內容：服務總覽 / 作品集 / 工作流程 -->
+        <div class="nav-item has-sub">
+          <button type="button" class="nav-parent">
+            <span class="t-zh">服務內容</span>
+            <span class="t-en">Services</span>
+            <span class="t-ja">サービス</span>
+            <span class="nav-caret">▾</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="services.html" class="nav-sub-link">
+              <span class="t-zh">服務總覽</span>
+              <span class="t-en">Overview</span>
+              <span class="t-ja">サービス一覧</span>
+            </a>
+            <a href="portfolio.html" class="nav-sub-link">
+              <span class="t-zh">作品集</span>
+              <span class="t-en">Portfolio</span>
+              <span class="t-ja">ポートフォリオ</span>
+            </a>
+            <a href="workflow.html" class="nav-sub-link">
+              <span class="t-zh">工作流程</span>
+              <span class="t-en">Workflow</span>
+              <span class="t-ja">ワークフロー</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 專案與計畫（單頁） -->
+        <a href="projects.html" class="nav-link">
+          <span class="t-zh">專案與計畫</span>
+          <span class="t-en">Projects</span>
+          <span class="t-ja">プロジェクト</span>
+        </a>
+
+        <!-- 聯絡我們（單頁） -->
+        <a href="contact.html" class="nav-link">
+          <span class="t-zh">聯絡我們</span>
+          <span class="t-en">Contact</span>
+          <span class="t-ja">お問い合わせ</span>
+        </a>
+      </nav>
+
+      <!-- 三語切換 -->
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn active" data-lang="zh">中</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ja">日</button>
       </div>
+
+      <!-- 漢堡按鈕（手機版） -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </section>
+  </header>
 
-  <!-- CTA -->
-  <section class="section section-cta fade-in-up">
-    <h2>從一趟導覽，開始一段與土地的關係</h2>
-    <p>無論你是旅客、學生、老師，或是想為地方做點什麼的青年，都可以在這裡找到自己的位置。</p>
-    <a href="guide.html" class="btn primary">看看導覽路線</a>
-  </section>
+  <!-- 首頁主要內容（可以沿用你之前的 hero） -->
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="hero-gradient"></div>
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="hero-tag">
+            <span class="t-zh">靜中生創 · Serein Studio</span>
+            <span class="t-en">Create in Calm · Serein Studio</span>
+            <span class="t-ja">静けさから生まれる創造 · Serein Studio</span>
+          </p>
+          <h1>
+            Serein Studio
+            <span>瑟然工作室</span>
+          </h1>
+          <p class="hero-lead">
+            <span class="t-zh">
+              靜謐中的靈感流動。<br>
+              結合文化轉譯、設計與創新實作，<br>
+              讓研究、地方與創意在同一個畫面相遇。
+            </span>
+            <span class="t-en">
+              A gentle stream of ideas in quiet. <br>
+              Blending cultural translation, design and creative practice, <br>
+              we let research, local stories and imagination meet in one frame.
+            </span>
+            <span class="t-ja">
+              静かな時間の中で、インスピレーションはそっと流れ出す。<br>
+              文化の翻訳、デザイン、実践的なクリエイションを組み合わせ、<br>
+              研究・地域・創造が同じ画面で出会う場をつくります。
+            </span>
+          </p>
+          <div class="hero-actions">
+            <a href="services.html" class="btn primary">
+              <span class="t-zh">了解服務內容</span>
+              <span class="t-en">Explore Services</span>
+              <span class="t-ja">サービスを見る</span>
+            </a>
+            <a href="projects.html" class="btn ghost">
+              <span class="t-zh">查看專案與提案</span>
+              <span class="t-en">View Projects</span>
+              <span class="t-ja">プロジェクト一覧</span>
+            </a>
+          </div>
+        </div>
 
+        <div class="hero-visual">
+          <div class="hero-orbit">
+            <div class="hero-drop"></div>
+            <div class="hero-orbit-ring"></div>
+          </div>
+          <p class="hero-caption">
+            <span class="t-zh">靜謐 · 文化 · 創造</span>
+            <span class="t-en">Serenity · Culture · Creation</span>
+            <span class="t-ja">静寂 · 文化 · 創造</span><br>
+            Serein Studio – The flow of inspiration in serenity.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 首頁可以再放一兩個 summary 區塊（選擇性） -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading center">
+          <h2>
+            <span class="t-zh">我們在做的事</span>
+            <span class="t-en">What We Do</span>
+            <span class="t-ja">Serein のしごと</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="t-zh">用研究的紮實，做出溫柔但有力道的設計與企劃。</span>
+            <span class="t-en">Solid research, gentle but powerful design and planning.</span>
+            <span class="t-ja">リサーチの確かさと、やわらかくて芯のあるデザイン・企画。</span>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer（所有頁面都一樣） -->
   <footer class="site-footer">
-    <p>© 2025 ReLAND 再地計畫 · 長治青年創生</p>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Serein Studio · 瑟然工作室</span>
+      <span class="footer-note">The flow of inspiration in serenity.</span>
+    </div>
   </footer>
 
-  <!-- GSAP CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

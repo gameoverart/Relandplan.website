@@ -1,120 +1,389 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device=device-width, initial-scale=1.0" />
-  <title>About ｜ ReLAND 再地計畫</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>關於瑟然｜Serein Studio 瑟然工作室</title>
+  <meta name="description" content="關於 Serein Studio 瑟然工作室的品牌故事與理念。靜謐中的靈感流動，結合文化轉譯、設計與創新實作的文創工作室。">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
-<body>
+<body class="lang-zh">
+
+  <!-- Header：跟 index.html 一樣，確保每頁都有選單＆漢堡＆語系 -->
   <header class="site-header">
-    <div class="logo">ReLAND</div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
-      <a href="about.html" class="nav-link active" data-i18n="navAbout">About</a>
-      <a href="tickets.html" class="nav-link" data-i18n="navTickets">Tickets</a>
-      <a href="guide.html" class="nav-link" data-i18n="navGuide">Guide</a>
-      <a href="shop.html" class="nav-link" data-i18n="navShop">Shop</a>
-      <a href="team.html" class="nav-link" data-i18n="navTeam">Team</a>
-    </nav>
-    <div class="lang-switch">
-      <button class="lang-btn active" data-lang="zh">中</button>
-      <button class="lang-btn" data-lang="en">EN</button>
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="logo-mark">S</span>
+        <div class="logo-text">
+          <span class="logo-en">Serein Studio</span>
+          <span class="logo-zh">瑟然工作室</span>
+        </div>
+      </div>
+
+      <nav class="main-nav" id="mainNav">
+        <!-- 首頁 -->
+        <a href="index.html" class="nav-link">
+          <span class="t-zh">首頁</span>
+          <span class="t-en">Home</span>
+          <span class="t-ja">ホーム</span>
+        </a>
+
+        <!-- 關於工作室：關於瑟然 / 成員 / 合作夥伴 -->
+        <div class="nav-item has-sub">
+          <button type="button" class="nav-parent">
+            <span class="t-zh">關於工作室</span>
+            <span class="t-en">About Studio</span>
+            <span class="t-ja">スタジオについて</span>
+            <span class="nav-caret">▾</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="about.html" class="nav-sub-link">
+              <span class="t-zh">關於瑟然</span>
+              <span class="t-en">About Serein</span>
+              <span class="t-ja">瑟然について</span>
+            </a>
+            <a href="team.html" class="nav-sub-link">
+              <span class="t-zh">工作室成員</span>
+              <span class="t-en">Team</span>
+              <span class="t-ja">メンバー</span>
+            </a>
+            <a href="partners.html" class="nav-sub-link">
+              <span class="t-zh">合作夥伴</span>
+              <span class="t-en">Partners</span>
+              <span class="t-ja">パートナー</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 服務內容：服務總覽 / 作品集 / 工作流程 -->
+        <div class="nav-item has-sub">
+          <button type="button" class="nav-parent">
+            <span class="t-zh">服務內容</span>
+            <span class="t-en">Services</span>
+            <span class="t-ja">サービス</span>
+            <span class="nav-caret">▾</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="services.html" class="nav-sub-link">
+              <span class="t-zh">服務總覽</span>
+              <span class="t-en">Overview</span>
+              <span class="t-ja">サービス一覧</span>
+            </a>
+            <a href="portfolio.html" class="nav-sub-link">
+              <span class="t-zh">作品集</span>
+              <span class="t-en">Portfolio</span>
+              <span class="t-ja">ポートフォリオ</span>
+            </a>
+            <a href="workflow.html" class="nav-sub-link">
+              <span class="t-zh">工作流程</span>
+              <span class="t-en">Workflow</span>
+              <span class="t-ja">ワークフロー</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 專案與計畫 -->
+        <a href="projects.html" class="nav-link">
+          <span class="t-zh">專案與計畫</span>
+          <span class="t-en">Projects</span>
+          <span class="t-ja">プロジェクト</span>
+        </a>
+
+        <!-- 聯絡我們 -->
+        <a href="contact.html" class="nav-link">
+          <span class="t-zh">聯絡我們</span>
+          <span class="t-en">Contact</span>
+          <span class="t-ja">お問い合わせ</span>
+        </a>
+      </nav>
+
+      <!-- 語言切換 -->
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn active" data-lang="zh">中</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ja">日</button>
+      </div>
+
+      <!-- 漢堡按鈕 -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main class="page-wrap">
+  <!-- Main：關於瑟然內容 -->
+  <main>
+    <!-- Page Hero：標題＋一句話 -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-heading center">
+          <h2>
+            <span class="t-zh">關於瑟然工作室</span>
+            <span class="t-en">About Serein Studio</span>
+            <span class="t-ja">Serein Studio について</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="t-zh">靜謐中的靈感流動，是我們的品牌核心。</span>
+            <span class="t-en">A gentle flow of inspiration in serenity is our core.</span>
+            <span class="t-ja">静けさの中で流れるインスピレーション。それが Serein の核です。</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 品牌故事與名稱由來 -->
     <section class="section">
-      <h1 class="page-title fade-in-up" data-i18n="aboutTitle">關於 ReLAND 再地計畫</h1>
-      <p class="page-intro fade-in-up" data-i18n="aboutIntro">
-        ReLAND 以「重新降落在土地上」為意象，結合青年導覽、地方故事與數位工具，
-        讓長治不再只是被路過的鄉鎮，而是值得專程前來、細細停留的地方。
-      </p>
-
-      <div class="two-col">
-        <div class="col fade-in-up">
-          <h2>計畫緣起</h2>
-          <p>
-            長治鄉具備豐富的人文、農業與生活故事，但長期面臨品牌形象分散、青年外流與觀光零散等問題。
-            ReLAND 的誕生，是希望從「導覽」這個最接近人的入口出發，重新整理地方的故事與體驗。
-          </p>
-          <p>
-            我們以可長期運作的創業視角來看地方，思考的不只是「怎麼辦一場活動」，而是
-            「如何讓地方成為青年與品牌願意長期投入的場域」。
+      <div class="container section-grid">
+        <div class="section-heading">
+          <h2>
+            <span class="t-zh">品牌故事與名稱由來</span>
+            <span class="t-en">Brand Story & Name</span>
+            <span class="t-ja">ブランドストーリーと名前の由来</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="t-zh">從微雨到工作室，一個關於「安靜地長出作品」的選擇。</span>
+            <span class="t-en">From evening drizzle to a studio for quiet creation.</span>
+            <span class="t-ja">夕暮れの霧雨から、「静かに作品を育てる場所」へ。</span>
           </p>
         </div>
-        <div class="col fade-in-up">
-          <div class="image-card about-image"></div>
-        </div>
-      </div>
 
-      <div class="two-col">
-        <div class="col fade-in-up">
-          <h2>計畫願景</h2>
-          <ul class="bullet-list">
-            <li>讓青年重新理解土地、重新連結地方。</li>
-            <li>讓導覽成為一種可以被職涯認真看待的文化工作。</li>
-            <li>讓地方品牌不再單打獨鬥，而是以聯盟形式共同成長。</li>
-          </ul>
-        </div>
-        <div class="col fade-in-up">
-          <h2>三大核心目標</h2>
-          <ol class="bullet-list">
-            <li>培訓至少 30 位具專業素養的青年導覽員。</li>
-            <li>整合 30 家以上在地品牌與場域，共同加入 ReLAND 聯盟。</li>
-            <li>建立可自償的導覽 × 市集 × 顧問服務營運模式。</li>
-          </ol>
+        <div class="section-content">
+          <p>
+            <span class="t-zh">
+              「Serein」這個字，指的是黃昏後、天空已經放晴時，仍悄悄落下的細雨。<br>
+              它不會造成劇烈的存在感，卻默默改變空氣的溫度與氣味——<br>
+              這種既安靜又有力量的狀態，正是瑟然工作室想要保持的創作姿態。
+            </span>
+            <span class="t-en">
+              The word “Serein” refers to a fine rain that falls quietly after sunset
+              when the sky has already cleared.<br>
+              It doesn’t draw loud attention, yet it quietly changes the air and the mood.
+              That quiet yet powerful presence is exactly how Serein Studio wishes to create.
+            </span>
+            <span class="t-ja">
+              「Serein」とは、夕暮れのあと、空が晴れているのにそっと降る霧雨のこと。<br>
+              目立とうとはしないのに、空気の温度や匂いをふわっと変えてしまう雨です。<br>
+              その「静かだけれど確かな力」を、Serein Studio の創作スタンスに重ねています。
+            </span>
+          </p>
+
+          <p>
+            <span class="t-zh">
+              工作室誕生於研究所生活與創作實務交錯的階段：<br>
+              白天在論文裡討論文化轉譯與地方創生，晚上在直播、剪輯與設計案中跟觀眾互動。<br>
+              於是萌生了一個念頭——<strong>何不把這些軌道整合起來，變成一座「靜謐但持續運轉」的工作場域？</strong>
+            </span>
+            <span class="t-en">
+              The studio was born where graduate research and creative practice meet:<br>
+              days spent discussing cultural translation and local revitalization in thesis work,
+              nights spent streaming, editing and designing for viewers and clients.<br>
+              That overlap led to one idea:<br>
+              <strong>What if we turn these separate tracks into a quiet, continuously running studio?</strong>
+            </span>
+            <span class="t-ja">
+              スタジオが生まれたのは、大学院での研究生活と、配信・編集・デザインの実務が交差する地点でした。<br>
+              昼は文化翻訳や地域創生について論文を書く。夜は配信や動画編集で、画面の向こうの人とやりとりをする。<br>
+              その行き来の中で<br>
+              <strong>「ばらばらの軌道を、一つの静かで動き続ける場にまとめたい」</strong>という想いが生まれました。
+            </span>
+          </p>
+
+          <p>
+            <span class="t-zh">
+              「瑟然」兩字，則強調這種介於平靜與波動之間的感覺：<br>
+              層層疊疊的情緒沒有被放大成戲劇，而是被整理成可以慢慢閱讀的作品。<br>
+              在這裡，我們相信：<br>
+              <strong>創意可以冷靜，研究可以溫柔，兩者不需要互相排斥。</strong>
+            </span>
+            <span class="t-en">
+              The Chinese name「瑟然」captures that subtle tension between stillness and movement.<br>
+              Emotions are not amplified into drama; they’re arranged into works you can quietly sit with.<br>
+              Here, we believe:<br>
+              <strong>Creativity can be calm, and research can be gentle — they do not have to exclude each other.</strong>
+            </span>
+            <span class="t-ja">
+              「瑟然」という漢字には、静けさと微かな揺らぎが同時に在る感じを込めています。<br>
+              感情を大きなドラマにするのではなく、ゆっくり読める作品として整えていく。<br>
+              私たちはこう考えています。<br>
+              <strong>クリエイティブは冷静でよくて、リサーチはやさしくていい。両方は対立しなくていい。</strong>
+            </span>
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- VTuber / 虛擬導覽員區塊 -->
-    <section class="section vtuber-section">
-      <h2 class="section-title fade-in-up">虛擬導覽員 · ReLAND 導覽夥伴</h2>
-      <p class="section-subtitle fade-in-up">
-        除了實際帶路的青年導覽員，我們也設計了專屬的虛擬導覽角色，<br />
-        在影片、短影音與線上導覽中陪伴大家一起認識長治。
-      </p>
-
-      <div class="vtuber-wrap">
-        <div class="vtuber-illust fade-in-up"></div>
-
-        <div class="vtuber-bio fade-in-up">
-          <h3 class="vtuber-name">田田 Tien-Tien</h3>
-          <p class="vtuber-role">ReLAND 虛擬導覽員 · 土地觀察員</p>
-          <p class="vtuber-text">
-            田田是 ReLAND 的虛擬導覽夥伴，設定為「降落在長治的土地觀察員」。<br />
-            透過短影音、線上導覽頁面與互動任務，引導旅客注意到田埂、老店、巷弄裡的日常故事。
+    <!-- 品牌定位與個性 -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-heading center">
+          <h2>
+            <span class="t-zh">品牌定位與個性</span>
+            <span class="t-en">Brand Positioning & Personality</span>
+            <span class="t-ja">ブランドの立ち位置と性格</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="t-zh">介於研究與創意、個人創作與專業提案之間的節點。</span>
+            <span class="t-en">A node between research and creativity, personal work and professional proposals.</span>
+            <span class="t-ja">研究とクリエイティブ、個人表現とプロの案件、そのあいだの節点。</span>
           </p>
-          <p class="vtuber-text">
-            未來也將結合導覽票券、NFC 勳章與線上紀錄頁面，成為 ReLAND 的「數位門面」：
-            不只出現在螢幕上，而是帶著大家把腳步真正踩進長治。
-          </p>
+        </div>
 
-          <div class="vtuber-tags">
-            <span class="tag-chip">#虛擬導覽員</span>
-            <span class="tag-chip">#Youth × Land</span>
-            <span class="tag-chip">#ReLAND夥伴</span>
-          </div>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>
+              <span class="t-zh">我們站在哪裡？</span>
+              <span class="t-en">Where We Stand</span>
+              <span class="t-ja">Serein の立ち位置</span>
+            </h3>
+            <p>
+              <span class="t-zh">
+                瑟然工作室並非大型設計公司，而是<strong>介於研究者、創作者與地方實作者</strong>之間的一個小型節點。<br>
+                我們擅長把田野、資料與情緒整理成清晰的結構，<br>
+                再用圖像、文字與影音去呈現。
+              </span>
+              <span class="t-en">
+                Serein Studio is not a big agency. It is a small node between
+                <strong>researchers, creators and on-site practitioners</strong>.<br>
+                We are good at structuring field notes, data and emotions,
+                then expressing them through visuals, text and video.
+              </span>
+              <span class="t-ja">
+                Serein は巨大なデザイン事務所ではありません。<br>
+                <strong>研究者・クリエイター・現場で動く人</strong>たちのあいだにある、小さなハブのような存在です。<br>
+                フィールドノートや資料、感情の揺れを整理し、<br>
+                それをビジュアル・言葉・映像に翻訳することを得意としています。
+              </span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              <span class="t-zh">我們的氣質</span>
+              <span class="t-en">Our Tone</span>
+              <span class="t-ja">Serein の空気感</span>
+            </h3>
+            <p>
+              <span class="t-zh">
+                若要用幾個關鍵字來形容瑟然，會是：<br>
+                <strong>冷靜、沉穩、細膩、帶一點幽默。</strong><br>
+                我們不追求華而不實的效果，而是在限定條件下找出最合適的表現方式。
+              </span>
+              <span class="t-en">
+                A few keywords for Serein would be:<br>
+                <strong>calm, grounded, delicate, with a quiet sense of humor.</strong><br>
+                We don’t chase flashy effects; we look for the most fitting expression within real constraints.
+              </span>
+              <span class="t-ja">
+                Serein のキーワードを挙げるなら、<br>
+                <strong>冷静・落ち着き・繊細さ・さりげないユーモア。</strong><br>
+                派手さよりも、その場の条件の中で「いちばんしっくりくる表現」を探します。
+              </span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              <span class="t-zh">兩個層次的運作</span>
+              <span class="t-en">Two Layers of Operation</span>
+              <span class="t-ja">二つのレイヤー</span>
+            </h3>
+            <p>
+              <span class="t-zh">
+                瑟然同時承載兩個面向：<br>
+                ① <strong>個人創作層</strong>：Vtuber、直播、剪輯與設計委託。<br>
+                ② <strong>專案／團隊層</strong>：與 Realight 真旅計畫等團隊合作的提案與計畫。<br>
+                兩者共享同一套品牌與價值，但可以依需求調整呈現的成熟度與語氣。
+              </span>
+              <span class="t-en">
+                The studio operates on two layers:<br>
+                ① <strong>Personal creative layer</strong>: Vtuber activities, streaming, editing and design commissions.<br>
+                ② <strong>Project/team layer</strong>: proposals and initiatives with teams such as Realight 真旅計畫.<br>
+                Both share the same brand and values, but the tone can shift depending on context.
+              </span>
+              <span class="t-ja">
+                スタジオには、二つのレイヤーがあります。<br>
+                ① <strong>個人クリエイティブ層</strong>：Vtuber 活動、配信、編集、デザイン受注。<br>
+                ② <strong>プロジェクト／チーム層</strong>：Realight 真旅計畫 などのチームと組む提案・企画。<br>
+                ブランドと価値観は共通しつつ、シーンに合わせて語り口を調整していきます。
+              </span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              <span class="t-zh">適合一起合作的人</span>
+              <span class="t-en">Who We Work Well With</span>
+              <span class="t-ja">相性のいいパートナー</span>
+            </h3>
+            <p>
+              <span class="t-zh">
+                我們特別適合與這幾種夥伴合作：<br>
+                ‧ 有想法、但還在摸索敘事與結構的人。<br>
+                ‧ 注重文化脈絡、在意尊重與細節的單位。<br>
+                ‧ 願意給時間讓專案慢慢長成，而不是只求快速交件的合作對象。
+              </span>
+              <span class="t-en">
+                We tend to work best with partners who:<br>
+                · Have ideas but are still shaping their narrative and structure.<br>
+                · Care about cultural context, respect and detail.<br>
+                · Prefer steady growth over rushed, purely output-focused work.
+              </span>
+              <span class="t-ja">
+                Serein と相性がいいのは、こんな人たちです。<br>
+                ・アイデアはあるけれど、まだ物語や構成を模索している人。<br>
+                ・文化的な背景やリスペクト、細部を大事にしたい組織。<br>
+                ・「とりあえず早く」よりも、「ちゃんと育てたい」と思ってくれるパートナー。
+              </span>
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- 下載企劃書 / 簡報 -->
-    <section class="section section-cta fade-in-up">
-      <h2>想更深入了解計畫內容？</h2>
-      <div class="btn-group">
-        <a href="assets/pdf/proposal.pdf" class="btn primary" target="_blank">下載企劃書</a>
-        <a href="assets/pdf/slides.pdf" class="btn ghost" target="_blank">查看簡報</a>
+    <!-- Slogan & 核心句 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading center">
+          <h2>
+            <span class="t-zh">Serein Studio 的一句話</span>
+            <span class="t-en">One Line for Serein Studio</span>
+            <span class="t-ja">Serein Studio を一言で</span>
+          </h2>
+        </div>
+        <div class="section-content" style="max-width:720px;margin:0 auto;text-align:center;">
+          <p>
+            <span class="t-zh">
+              <strong>「靜謐中的靈感流動。」</strong><br>
+              在資訊爆炸與聲量競爭的環境下，我們選擇用研究的厚度、設計的溫度，
+              安靜但持續地把故事說清楚、說好。
+            </span>
+            <span class="t-en">
+              <strong>“The flow of inspiration in serenity.”</strong><br>
+              In a world flooded with noise and speed,
+              we choose solid research and warm design to quietly,
+              consistently tell stories with clarity and care.
+            </span>
+            <span class="t-ja">
+              <strong>「静けさの中で流れるインスピレーション。」</strong><br>
+              情報と声があふれる世界の中で、<br>
+              私たちはリサーチの厚みとデザインのあたたかさを武器に、<br>
+              静かに、でも途切れずに物語を整え、届けていきます。
+            </span>
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer：共用 -->
   <footer class="site-footer">
-    <p>© 2025 ReLAND 再地計畫 · 長治青年創生</p>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Serein Studio · 瑟然工作室</span>
+      <span class="footer-note">The flow of inspiration in serenity.</span>
+    </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

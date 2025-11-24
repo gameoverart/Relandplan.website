@@ -1,116 +1,408 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device=device-width, initial-scale=1.0" />
-  <title>Team ｜ ReLAND 團隊介紹</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>工作室成員｜Serein Studio 瑟然工作室</title>
+  <meta name="description" content="Serein Studio 瑟然工作室核心成員與協作角色介紹。">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="favicon.ico" />
 </head>
-<body>
+<body class="lang-zh">
+
+  <!-- Header：和 index.html / about.html 一樣 -->
   <header class="site-header">
-    <div class="logo">ReLAND</div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
-      <a href="about.html" class="nav-link" data-i18n="navAbout">About</a>
-      <a href="tickets.html" class="nav-link" data-i18n="navTickets">Tickets</a>
-      <a href="guide.html" class="nav-link" data-i18n="navGuide">Guide</a>
-      <a href="shop.html" class="nav-link" data-i18n="navShop">Shop</a>
-      <a href="team.html" class="nav-link active" data-i18n="navTeam">Team</a>
-    </nav>
-    <div class="lang-switch">
-      <button class="lang-btn active" data-lang="zh">中</button>
-      <button class="lang-btn" data-lang="en">EN</button>
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="logo-mark">S</span>
+        <div class="logo-text">
+          <span class="logo-en">Serein Studio</span>
+          <span class="logo-zh">瑟然工作室</span>
+        </div>
+      </div>
+
+      <nav class="main-nav" id="mainNav">
+        <!-- 首頁 -->
+        <a href="index.html" class="nav-link">
+          <span class="t-zh">首頁</span>
+          <span class="t-en">Home</span>
+          <span class="t-ja">ホーム</span>
+        </a>
+
+        <!-- 關於工作室 -->
+        <div class="nav-item has-sub">
+          <button type="button" class="nav-parent">
+            <span class="t-zh">關於工作室</span>
+            <span class="t-en">About Studio</span>
+            <span class="t-ja">スタジオについて</span>
+            <span class="nav-caret">▾</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="about.html" class="nav-sub-link">
+              <span class="t-zh">關於瑟然</span>
+              <span class="t-en">About Serein</span>
+              <span class="t-ja">瑟然について</span>
+            </a>
+            <a href="team.html" class="nav-sub-link">
+              <span class="t-zh">工作室成員</span>
+              <span class="t-en">Team</span>
+              <span class="t-ja">メンバー</span>
+            </a>
+            <a href="partners.html" class="nav-sub-link">
+              <span class="t-zh">合作夥伴</span>
+              <span class="t-en">Partners</span>
+              <span class="t-ja">パートナー</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 服務內容 -->
+        <div class="nav-item has-sub">
+          <button type="button" class="nav-parent">
+            <span class="t-zh">服務內容</span>
+            <span class="t-en">Services</span>
+            <span class="t-ja">サービス</span>
+            <span class="nav-caret">▾</span>
+          </button>
+          <div class="nav-submenu">
+            <a href="services.html" class="nav-sub-link">
+              <span class="t-zh">服務總覽</span>
+              <span class="t-en">Overview</span>
+              <span class="t-ja">サービス一覧</span>
+            </a>
+            <a href="portfolio.html" class="nav-sub-link">
+              <span class="t-zh">作品集</span>
+              <span class="t-en">Portfolio</span>
+              <span class="t-ja">ポートフォリオ</span>
+            </a>
+            <a href="workflow.html" class="nav-sub-link">
+              <span class="t-zh">工作流程</span>
+              <span class="t-en">Workflow</span>
+              <span class="t-ja">ワークフロー</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- 專案與計畫 -->
+        <a href="projects.html" class="nav-link">
+          <span class="t-zh">專案與計畫</span>
+          <span class="t-en">Projects</span>
+          <span class="t-ja">プロジェクト</span>
+        </a>
+
+        <!-- 聯絡我們 -->
+        <a href="contact.html" class="nav-link">
+          <span class="t-zh">聯絡我們</span>
+          <span class="t-en">Contact</span>
+          <span class="t-ja">お問い合わせ</span>
+        </a>
+      </nav>
+
+      <!-- 語言切換 -->
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn active" data-lang="zh">中</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="ja">日</button>
+      </div>
+
+      <!-- 漢堡 -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
-  <main class="page-wrap">
-    <section class="section">
-      <h1 class="page-title fade-in-up" data-i18n="teamTitle">ReLAND 團隊介紹</h1>
-      <p class="page-intro fade-in-up" data-i18n="teamIntro">
-        ReLAND 是由一群關心土地、熱愛設計與文化的青年所組成。我們相信，導覽不只是帶路，
-        而是把地方的故事重新整理、說給更多人聽。
-      </p>
-
-      <div class="team-grid">
-        <!-- 成員 1 -->
-        <article class="team-card fade-in-up">
-          <div class="avatar-wrap">
-            <div class="avatar avatar-1"></div>
-          </div>
-          <h2 class="team-name">柯玥音</h2>
-          <p class="team-role">企劃統籌 / 品牌設計</p>
-          <p class="team-bio">
-            負責 ReLAND 整體企劃撰寫、品牌定位與視覺設計，將地方訪談與田野資料轉化為可以被理解的故事與版面。
-          </p>
-          <div class="team-tags">
-            <span class="tag-chip">#企劃發想</span>
-            <span class="tag-chip">#品牌識別</span>
-          </div>
-        </article>
-
-        <!-- 成員 2 -->
-        <article class="team-card fade-in-up">
-          <div class="avatar-wrap">
-            <div class="avatar avatar-2"></div>
-          </div>
-          <h2 class="team-name">李鈺倫</h2>
-          <p class="team-role">簡報主講 / 導覽動線設計</p>
-          <p class="team-bio">
-            擔任對外簡報與導覽動線設計，負責將複雜的流程變成清楚的體驗步驟，並與合作場域溝通現場細節。
-          </p>
-          <div class="team-tags">
-            <span class="tag-chip">#導覽設計</span>
-            <span class="tag-chip">#現場控場</span>
-          </div>
-        </article>
-
-        <!-- 成員 3 -->
-        <article class="team-card fade-in-up">
-          <div class="avatar-wrap">
-            <div class="avatar avatar-3"></div>
-          </div>
-          <h2 class="team-name">ReLAND 青年導覽夥伴</h2>
-          <p class="team-role">導覽員 / 記錄者</p>
-          <p class="team-bio">
-            由多位參與「導覽志工學堂」培訓的青年組成，他們在現場帶路、說故事，也負責將地方影像與聲音留下。
-          </p>
-          <div class="team-tags">
-            <span class="tag-chip">#青年行動</span>
-            <span class="tag-chip">#地方創生</span>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- 虛擬導覽員在 team 頁再出現一次 -->
-    <section class="section vtuber-section">
-      <h2 class="section-title fade-in-up" data-i18n="teamVtuberTitle">虛擬導覽員 · 團隊成員之一</h2>
-      <p class="section-subtitle fade-in-up" data-i18n="teamVtuberIntro">
-        除了線下導覽夥伴，虛擬導覽員田田也會在線上內容與未來互動系統中，作為 ReLAND 的另一個「說故事的出口」。
-      </p>
-
-      <div class="vtuber-wrap">
-        <div class="vtuber-illust fade-in-up"></div>
-        <div class="vtuber-bio fade-in-up">
-          <h3 class="vtuber-name">田田 Tien-Tien</h3>
-          <p class="vtuber-role">ReLAND 虛擬導覽員</p>
-          <p class="vtuber-text">
-            田田會出現在 ReLAND 的短影音、官網頁面與未來的互動導覽系統中，
-            以半虛構角色的方式，把田野調查與真實故事包裝成容易理解的內容。
-          </p>
-          <p class="vtuber-text">
-            對於不方便立即到現場的觀眾，田田也能變成一種「遠端接觸地方」的媒介，讓更多人在線上就開始與長治建立連結。
+  <!-- Main：成員介紹 -->
+  <main>
+    <!-- Page Hero -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-heading center">
+          <h2>
+            <span class="t-zh">工作室成員</span>
+            <span class="t-en">Studio Team</span>
+            <span class="t-ja">スタジオメンバー</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="t-zh">在靜謐底下運轉的小團隊，各自帶著不同專長與節奏。</span>
+            <span class="t-en">A small team running quietly beneath the calm surface, each with a different strength and rhythm.</span>
+            <span class="t-ja">静かな空気の下で動き続ける少人数チーム。それぞれが違う得意分野とリズムを持っています。</span>
           </p>
         </div>
       </div>
     </section>
+
+    <!-- 核心成員 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>
+            <span class="t-zh">核心成員</span>
+            <span class="t-en">Core Members</span>
+            <span class="t-ja">コアメンバー</span>
+          </h2>
+          <p class="section-subtitle">
+            <span class="t-zh">以研究為底，結合設計、企劃與在地實作的跨域小隊。</span>
+            <span class="t-en">A cross-field team grounded in research, design, planning and on-site practice.</span>
+            <span class="t-ja">リサーチを土台に、デザイン・企画・現場実践をつなぐクロスフィールドチーム。</span>
+          </p>
+        </div>
+
+        <div class="team-grid">
+
+          <!-- 成員 1：主理人（你） -->
+          <article class="team-card">
+            <div class="member-header">
+              <div class="member-photo">
+                <!-- 把這裡換成你的照片路徑，建議圖檔做 500x500 -->
+                <img src="images/羅莎琳.jpg" alt="Serein Studio 主理人照片">
+              </div>
+              <div class="member-title">
+                <h3>
+                  <span class="t-zh">主理人．創意研究</span>
+                  <span class="t-en">Studio Lead · Creative Research</span>
+                  <span class="t-ja">スタジオリード・クリエイティブリサーチ</span>
+                </h3>
+                <p class="team-role">
+                  <span class="t-zh">負責整體方向與整合｜夜川那月</span>
+                  <span class="t-en">Overall direction & integration｜(your name here)</span>
+                  <span class="t-ja">全体ディレクションと統合担当｜（氏名）</span>
+                </p>
+                <p>
+                  <span class="t-zh">
+                    以文化創意為主修的研究者，同時也是 Vtuber、設計與剪輯工作者。<br>
+                    在學術與實務之間搭橋，把田野調查、地方故事與數位敘事整理成可被理解的提案與作品。
+                  </span>
+                  <span class="t-en">
+                    A cultural & creative industries researcher who also works as a Vtuber, designer and editor.<br>
+                    Bridges academic research and practice by turning fieldwork and local stories into understandable proposals and digital works.
+                  </span>
+                  <span class="t-ja">
+                    文化創意分野を専攻するリサーチャーであり、同時に Vtuber・デザイナー・動画編集者でもある人。<br>
+                    フィールドワークや地域の物語を整理し、提案書やデジタル作品としてわかりやすく翻訳していく役割。
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <ul class="member-exp-list">
+              <li>
+                <span class="t-zh">研究主題聚焦於原住民文化數位轉譯、智慧旅遊與地方創生。</span>
+                <span class="t-en">Research focuses on Indigenous cultural translation, smart tourism and local revitalization.</span>
+                <span class="t-ja">研究テーマは、先住民文化のデジタル翻訳・スマートツーリズム・地域創生。</span>
+              </li>
+              <li>
+                <span class="t-zh">多次參與數位科技、教育創新與地方創生相關提案競賽，負責主架構與簡報統籌。</span>
+                <span class="t-en">Leads structure and presentations in digital tech, educational innovation and local revitalization proposal competitions.</span>
+                <span class="t-ja">デジタル技術・教育イノベーション・地域創生系コンペで、構成とプレゼン統括を担当。</span>
+              </li>
+              <li class="exp-more">
+                <span class="t-zh">Realight 真旅計畫團隊共同發起與企劃成員。</span>
+                <span class="t-en">Co-founder and planner for team such as Realight.</span>
+                <span class="t-ja">Realight 真旅計畫・ReLAND 再地計畫 などのチーム立ち上げメンバー。</span>
+              </li>
+              <li class="exp-more">
+                <span class="t-zh">具備 Vtuber 品牌經營、直播節目企劃與社群經營經驗，能將研究語言轉換為一般觀眾也能共鳴的內容。</span>
+                <span class="t-en">Experienced in Vtuber branding, streaming program planning and community management, translating academic ideas into relatable content.</span>
+                <span class="t-ja">Vtuber ブランド運営・配信企画・コミュニティ運営の経験があり、研究ベースの内容を一般の視聴者にも届く表現に変換する役割。</span>
+              </li>
+            </ul>
+
+            <button class="member-toggle">
+              <span class="label-more">
+                <span class="t-zh">顯示更多經歷</span>
+                <span class="t-en">Show more</span>
+                <span class="t-ja">もっと見る</span>
+              </span>
+              <span class="label-less">
+                <span class="t-zh">收起部分經歷</span>
+                <span class="t-en">Show less</span>
+                <span class="t-ja">折りたたむ</span>
+              </span>
+            </button>
+          </article>
+
+          <!-- 成員 2：企劃／地方連結 -->
+          <article class="team-card">
+            <div class="member-header">
+              <div class="member-photo">
+                <img src="images/member-planner.jpg" alt="企劃與地方連結成員照片">
+              </div>
+              <div class="member-title">
+                <h3>
+                  <span class="t-zh">企劃．地方連結</span>
+                  <span class="t-en">Planning · Local Liaison</span>
+                  <span class="t-ja">企画・地域コーディネート</span>
+                </h3>
+                <p class="team-role">
+                  <span class="t-zh">負責場域溝通與活動設計</span>
+                  <span class="t-en">Field communication & activity design</span>
+                  <span class="t-ja">フィールド調整・イベント設計担当</span>
+                </p>
+                <p>
+                  <span class="t-zh">
+                    擅長與在地店家、學校與公部門溝通，將抽象概念轉換為可落地的活動流程與體驗動線。
+                  </span>
+                  <span class="t-en">
+                    Specializes in working with local shops, schools and public sectors, turning abstract concepts into concrete activity flows and on-site experiences.
+                  </span>
+                  <span class="t-ja">
+                    地元店舗・学校・行政との調整を得意とし、抽象的なコンセプトを現場で実行できる体験設計へと落とし込む役割。
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <ul class="member-exp-list">
+              <li>
+                <span class="t-zh">協助規劃高樹、長治、霧台等地區之場域訪查與青年參與活動。</span>
+                <span class="t-en">Helps plan field visits and youth-engagement activities in areas such as Gaoshu, Changzhi and Wutai.</span>
+                <span class="t-ja">高樹・長治・霧台などの地域で、フィールド調査と若者向けイベントを企画。</span>
+              </li>
+              <li>
+                <span class="t-zh">負責實體活動流程設計、帶領體驗以及現場氣氛掌握。</span>
+                <span class="t-en">Designs offline activity flows, leads experiences and manages on-site atmosphere.</span>
+                <span class="t-ja">オフラインイベントの導線設計・体験のファシリテーション・会場の空気づくりを担当。</span>
+              </li>
+              <li class="exp-more">
+                <span class="t-zh">參與多場校內外競賽，擔任團隊簡報與口頭報告的第一線成員。</span>
+                <span class="t-en">Front-line presenter in various internal and external competitions.</span>
+                <span class="t-ja">学内外コンペで、チームのプレゼンテーション担当として登壇経験多数。</span>
+              </li>
+            </ul>
+
+            <button class="member-toggle">
+              <span class="label-more">
+                <span class="t-zh">顯示更多經歷</span>
+                <span class="t-en">Show more</span>
+                <span class="t-ja">もっと見る</span>
+              </span>
+              <span class="label-less">
+                <span class="t-zh">收起部分經歷</span>
+                <span class="t-en">Show less</span>
+                <span class="t-ja">折りたたむ</span>
+              </span>
+            </button>
+          </article>
+
+          <!-- 成員 3：設計與視覺 -->
+          <article class="team-card">
+            <div class="member-header">
+              <div class="member-photo">
+                <img src="images/member-designer.jpg" alt="設計與視覺統籌成員照片">
+              </div>
+              <div class="member-title">
+                <h3>
+                  <span class="t-zh">設計．視覺統籌</span>
+                  <span class="t-en">Design · Visual Lead</span>
+                  <span class="t-ja">デザイン・ビジュアル統括</span>
+                </h3>
+                <p class="team-role">
+                  <span class="t-zh">品牌視覺與版面設計</span>
+                  <span class="t-en">Brand visual & layout design</span>
+                  <span class="t-ja">ブランドビジュアル・レイアウト担当</span>
+                </p>
+                <p>
+                  <span class="t-zh">
+                    負責視覺系統、排版與素材風格統一，確保提案書、簡報與社群素材在不同場景仍維持一致氣質。
+                  </span>
+                  <span class="t-en">
+                    Handles the visual system, layouts and asset styles, ensuring proposals, decks and social materials share a consistent tone across contexts.
+                  </span>
+                  <span class="t-ja">
+                    ビジュアルシステム・レイアウト・素材のトーンを統一し、提案書・スライド・SNS 素材がどの場でも同じ空気感になるよう調整する役割。
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <ul class="member-exp-list">
+              <li>
+                <span class="t-zh">擅長海報設計、社群圖像、提案簡報版面規劃。</span>
+                <span class="t-en">Skilled in posters, social media graphics and proposal slide layouts.</span>
+                <span class="t-ja">ポスター・SNS 用画像・提案スライドのレイアウト設計に強み。</span>
+              </li>
+              <li>
+                <span class="t-zh">熟悉 Canva、Illustrator 等工具，可依專案預算調整製作流程。</span>
+                <span class="t-en">Experienced with Canva, Illustrator and more, able to adjust workflows based on budget.</span>
+                <span class="t-ja">Canva・Illustrator などのツールに精通し、予算に合わせた制作フローの提案が可能。</span>
+              </li>
+            </ul>
+          </article>
+
+          <!-- 成員 4：技術／數位執行 -->
+          <article class="team-card">
+            <div class="member-header">
+              <div class="member-photo">
+                <img src="images/member-tech.jpg" alt="技術與數位執行成員照片">
+              </div>
+              <div class="member-title">
+                <h3>
+                  <span class="t-zh">技術協力．數位執行</span>
+                  <span class="t-en">Tech Support · Digital Execution</span>
+                  <span class="t-ja">テックサポート・デジタル実装</span>
+                </h3>
+                <p class="team-role">
+                  <span class="t-zh">網站／互動原型開發</span>
+                  <span class="t-en">Web & interactive prototypes</span>
+                  <span class="t-ja">Web・インタラクティブ試作担当</span>
+                </p>
+                <p>
+                  <span class="t-zh">
+                    支援前端網頁、AR／互動展示等技術實作，協助把概念和線框變成可以實際操作的 Demo。
+                  </span>
+                  <span class="t-en">
+                    Supports front-end web, AR and interactive exhibits, helping turn concepts and wireframes into working demos.
+                  </span>
+                  <span class="t-ja">
+                    フロントエンドの Web 実装や AR・インタラクティブ展示などを担当し、コンセプトやワイヤーを動くデモへと仕上げていく役割。
+                  </span>
+                </p>
+              </div>
+            </div>
+
+            <ul class="member-exp-list">
+              <li>
+                <span class="t-zh">熟悉 HTML / CSS / JS 等基礎技術，能快速搭建提案用展示頁。</span>
+                <span class="t-en">Familiar with HTML / CSS / JS and can quickly build demo pages for proposals.</span>
+                <span class="t-ja">HTML / CSS / JS などの基礎技術に習熟し、提案用デモページを短期間で構築可能。</span>
+              </li>
+              <li class="exp-more">
+                <span class="t-zh">參與過校內外實務專題、地方創生相關智慧休憩／導覽系統等開發。</span>
+                <span class="t-en">Participated in practical projects, including smart leisure / tour guide systems for local revitalization.</span>
+                <span class="t-ja">学内外の実務プロジェクトや、地域創生に関わるスマート休憩・ガイドシステム開発に参加経験あり。</span>
+              </li>
+            </ul>
+
+            <button class="member-toggle">
+              <span class="label-more">
+                <span class="t-zh">顯示更多經歷</span>
+                <span class="t-en">Show more</span>
+                <span class="t-ja">もっと見る</span>
+              </span>
+              <span class="label-less">
+                <span class="t-zh">收起部分經歷</span>
+                <span class="t-en">Show less</span>
+                <span class="t-ja">折りたたむ</span>
+              </span>
+            </button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 未來如果有實習生／合作成員，可以再加一個區塊 -->
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <p>© 2025 ReLAND 再地計畫 · 長治青年創生</p>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Serein Studio · 瑟然工作室</span>
+      <span class="footer-note">The flow of inspiration in serenity.</span>
+    </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
